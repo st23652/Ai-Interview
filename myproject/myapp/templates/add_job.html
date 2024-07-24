@@ -1,0 +1,17 @@
+<!-- myapp/templates/add_job.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Job</title>
+</head>
+<body>
+    <h1>Add New Job</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Job List</a>
+</body>
+</html>
