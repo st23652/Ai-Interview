@@ -1,0 +1,821 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\5688s> py --list
+ -V:3.12 *        Python 3.12 (64-bit)
+PS C:\Users\5688s> ^C
+PS C:\Users\5688s> py -V
+Python 3.12.4
+PS C:\Users\5688s> py -m pip --version
+pip 24.1.2 from C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip (python 3.12)
+PS C:\Users\5688s> cd "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip"
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip> py get-pip.py
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\5688s\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip\\get-pip.py': [Errno 2] No such file or directory
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip> py -m pip install requests
+Collecting requests
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting charset-normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.3.2-cp312-cp312-win_amd64.whl.metadata (34 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+Collecting urllib3<3,>=1.21.1 (from requests)
+  Downloading urllib3-2.2.2-py3-none-any.whl.metadata (6.4 kB)
+Collecting certifi>=2017.4.17 (from requests)
+  Downloading certifi-2024.7.4-py3-none-any.whl.metadata (2.2 kB)
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 3.4 MB/s eta 0:00:00
+Downloading certifi-2024.7.4-py3-none-any.whl (162 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 9.5 MB/s eta 0:00:00
+Downloading charset_normalizer-3.3.2-cp312-cp312-win_amd64.whl (100 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.4/100.4 kB 5.6 MB/s eta 0:00:00
+Downloading idna-3.7-py3-none-any.whl (66 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 3.5 MB/s eta 0:00:00
+Downloading urllib3-2.2.2-py3-none-any.whl (121 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.4/121.4 kB 1.8 MB/s eta 0:00:00
+Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+Successfully installed certifi-2024.7.4 charset-normalizer-3.3.2 idna-3.7 requests-2.32.3 urllib3-2.2.2
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip> pip install django
+Collecting django
+  Downloading Django-5.0.7-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref<4,>=3.7.0 (from django)
+  Downloading asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.3.1 (from django)
+  Downloading sqlparse-0.5.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting tzdata (from django)
+  Downloading tzdata-2024.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading Django-5.0.7-py3-none-any.whl (8.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 MB 14.1 MB/s eta 0:00:00
+Downloading asgiref-3.8.1-py3-none-any.whl (23 kB)
+Downloading sqlparse-0.5.1-py3-none-any.whl (44 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.2/44.2 kB 2.1 MB/s eta 0:00:00
+Downloading tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 345.4/345.4 kB 10.8 MB/s eta 0:00:00
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.8.1 django-5.0.7 sqlparse-0.5.1 tzdata-2024.1
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip> django-admin startproject myproject
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip> cd myproject
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py startapp myapp
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage AppExecution Aliases.
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py startapp myapp
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage AppExecution Aliases.
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py startapp myapp
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 11, in main
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 13, in main
+    raise ImportError(
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> py -m venv venv
+PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> .\venv\Scripts\activate
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> pip install django
+Collecting django
+  Using cached Django-5.0.7-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref<4,>=3.7.0 (from django)
+  Using cached asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.3.1 (from django)
+  Using cached sqlparse-0.5.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting tzdata (from django)
+  Using cached tzdata-2024.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Using cached Django-5.0.7-py3-none-any.whl (8.2 MB)
+Using cached asgiref-3.8.1-py3-none-any.whl (23 kB)
+Using cached sqlparse-0.5.1-py3-none-any.whl (44 kB)
+Using cached tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.8.1 django-5.0.7 sqlparse-0.5.1 tzdata-2024.1
+
+[notice] A new release of pip is available: 24.0 -> 24.1.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python -m django --version
+5.0.7
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> django-admin startproject myproject
+
+CommandError: 'C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject' already exists
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py startapp myapp
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> Open myproject/settings.py
+Open : The term 'Open' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Open myproject/settings.py
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (Open:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> myproject/settings.py
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py makemigrations myapp
+Migrations for 'myapp':
+  myapp\migrations\0001_initial.py
+    - Create model Job
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, myapp, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying myapp.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 19:32:49
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Not Found: /
+[23/Jul/2024 19:33:45] "GET / HTTP/1.1" 404 2231
+Not Found: /favicon.ico
+[23/Jul/2024 19:33:45] "GET /favicon.ico HTTP/1.1" 404 2282
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 19:41:50
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 19:41:54
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 19:41:56
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 19:42:18
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py", line 6, in job_list
+    return render(request, 'job_list.html', {'jobs': jobs})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: job_list.html
+[23/Jul/2024 19:42:28] "GET / HTTP/1.1" 500 79765
+Not Found: /favicon.ico
+[23/Jul/2024 19:42:28,688] - Broken pipe from ('127.0.0.1', 63990)
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 19:42:50
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py", line 6, in job_list
+    return render(request, 'job_list.html', {'jobs': jobs})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: job_list.html
+[23/Jul/2024 19:43:06] "GET / HTTP/1.1" 500 79765
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py", line 6, in job_list
+    return render(request, 'job_list.html', {'jobs': jobs})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: job_list.html
+[23/Jul/2024 19:43:09] "GET / HTTP/1.1" 500 79765
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py changed, reloading.
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 382, in execute
+    settings.INSTALLED_APPS
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py", line 46
+    s',
+     ^
+SyntaxError: unterminated string literal (detected at line 46)
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 382, in execute
+    settings.INSTALLED_APPS
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py", line 65
+    'django.contrib.messages.context_processors.messages',,
+                                                          ^
+SyntaxError: invalid syntax
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 382, in execute
+    settings.INSTALLED_APPS
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py", line 58, in <module>
+    'DIRS': [os.path.join(BASE_DIR, 'templates')],
+             ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 22:50:05
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[23/Jul/2024 22:50:09] "GET / HTTP/1.1" 200 143
+Not Found: /jobs/
+[23/Jul/2024 22:51:55] "GET /jobs/ HTTP/1.1" 404 2382
+Not Found: /favicon.ico
+[23/Jul/2024 22:51:55,468] - Broken pipe from ('127.0.0.1', 61984)
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 22:54:28
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py", line 23, in <module>
+    path('', views.job_list, name='home'),  # Set the home page to job_list view
+             ^^^^^^^^^^^^^^
+AttributeError: module 'myapp.views' has no attribute 'job_list'
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py", line 23, in <module>
+    path('', views.job_list, name='home'),  # Set the home page to job_list view
+             ^^^^^^^^^^^^^^
+AttributeError: module 'myapp.views' has no attribute 'job_list'
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py", line 19, in <module>
+    from myapp import views  # Import the views from your app
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py", line 1, in <module>
+    impor
+NameError: name 'impor' is not defined
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py", line 19, in <module>
+    from myapp import views  # Import the views from your app
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py", line 1
+    import django.
+                  ^
+SyntaxError: invalid syntax
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py", line 23, in <module>
+    path('', views.job_list, name='home'),  # Set the home page to job_list view
+             ^^^^^^^^^^^^^^
+AttributeError: module 'myapp.views' has no attribute 'job_list'
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 133, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\base.py", line 486, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 519, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\urls.py", line 23, in <module>
+    path('', views.job_list, name='home'),  # Set the home page to job_list view
+             ^^^^^^^^^^^^^^
+AttributeError: module 'myapp.views' has no attribute 'job_list'
+C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py changed, reloading.
+Traceback (most recent call last):
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\core\management\__init__.py", line 382, in execute
+    settings.INSTALLED_APPS
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\myproject\settings.py", line 280
+    ]
+    ^
+SyntaxError: unmatched ']'
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> pip show django
+Name: Django
+Version: 5.0.7
+Summary: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+Home-page: https://www.djangoproject.com/
+Author: Django Software Foundation
+Author-email: foundation@djangoproject.com
+License: BSD-3-Clause
+Location: C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages
+Requires: asgiref, sqlparse, tzdata
+Required-by:
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> .\venv\Scripts\activate
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python -m venv venv
+Error: [Errno 13] Permission denied: 'C:\\Users\\5688s\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip\\myproject\\venv\\Scripts\\python.exe'
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> pip install django
+Requirement already satisfied: django in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (5.0.7)
+Requirement already satisfied: asgiref<4,>=3.7.0 in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (from django) (3.8.1)
+Requirement already satisfied: sqlparse>=0.3.1 in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (from django) (0.5.1)
+Requirement already satisfied: tzdata in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (from django) (2024.1)
+
+[notice] A new release of pip is available: 24.0 -> 24.1.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python.exe -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (24.0)
+Collecting pip
+  Using cached pip-24.1.2-py3-none-any.whl.metadata (3.6 kB)
+Using cached pip-24.1.2-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-24.1.2
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> pip show django
+Name: Django
+Version: 5.0.7
+Summary: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+Home-page: https://www.djangoproject.com/
+Author: Django Software Foundation
+Author-email: foundation@djangoproject.com
+License: BSD-3-Clause
+Location: C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject\venv\Lib\site-packages
+Requires: asgiref, sqlparse, tzdata
+Required-by:
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> pip install --upgrade django
+Requirement already satisfied: django in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (5.0.7)
+Requirement already satisfied: asgiref<4,>=3.7.0 in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (from django) (3.8.1)
+Requirement already satisfied: sqlparse>=0.3.1 in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (from django) (0.5.1)
+Requirement already satisfied: tzdata in c:\users\5688s\appdata\local\programs\python\python312\lib\site-packages\pip\myproject\venv\lib\site-packages (from django) (2024.1)
+(venv) PS C:\Users\5688s\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip\myproject> python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 23, 2024 - 23:13:13
+Django version 5.0.7, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[23/Jul/2024 23:13:20] "GET / HTTP/1.1" 200 234
+[23/Jul/2024 23:13:23] "GET /jobs/jobs/add/ HTTP/1.1" 200 694
+[23/Jul/2024 23:14:26] "GET /jobs/jobs/add/ HTTP/1.1" 200 694
+[23/Jul/2024 23:14:39] "GET / HTTP/1.1" 200 234
+Not Found: /favicon.ico
+[23/Jul/2024 23:14:39,789] - Broken pipe from ('127.0.0.1', 63068)
+[23/Jul/2024 23:14:42] "GET /jobs/jobs/add/ HTTP/1.1" 200 694
+Not Found: /favicon.ico
+[23/Jul/2024 23:14:42,294] - Broken pipe from ('127.0.0.1', 63108)
+[23/Jul/2024 23:15:11] "GET / HTTP/1.1" 200 234
