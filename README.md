@@ -1,1 +1,1 @@
-# st23652-AI-Interview
+# AI Interview
