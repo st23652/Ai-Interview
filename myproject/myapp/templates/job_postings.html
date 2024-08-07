@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+<div class="container">
+
+    {% if user.is_employer %}
+        <h2>Post a Job</h2>
+        <form class="post-job" id="jobForm" method="post" action="{% url 'job_create' %}">
+            {% csrf_token %}
+            <label for="job-title">Job Title:</label><br>
+            <input type="text" id="job-title" name="title" required><br><br>
+            
+            <label for="company-name">Company Name:</label><br>
+            <input type="text" id="company-name" name="company_name" required><br><br>
+            
+            <label for="job-description">Job Description:</label><br>
+            <textarea id="job-description" name="description" required></textarea><br><br>
+            
+            <label for="experience">Experience Needed (years):</label><br>
+            <input type="number" id="experience" name="experience" required><br><br>
+            
+            <label for="job-type">Job Type:</label><br>
+            <select id="job-type" name="job_type" required>
+                <option value="full_time">Full-time</option>
+                <option value="part_time">Part-time</option>
+                <option value="contract">Contract</option>
+            </select><br><br>
+            
+            <label for="salary">Salary:</label><br>
+            <input type="number" id="salary" name="salary" required><br><br>
+            
+            <label for="deadline">Deadline:</label><br>
+            <input type="date" id="deadline" name="deadline" required><br><br>
+            
+            <button type="submit">Post Job</button>
+        </form>
+    {% endif %}
+
+    <h2>Available Job Postings</h2>
+    <div class="job-postings" id="jobList">
+        <ul id="jobListUl">
+            {% for job in jobs %}
+                <li>
+                    <h3>{{ job.title }}</h3>
+                    <p><strong>Company:</strong> {{ job.company_name }}</p>
+                    <p><strong>Job Description:</strong> {{ job.description }}</p>
+                    <p><strong>Experience Needed:</strong> {{ job.experience }} years</p>
+                    <p><strong>Job Type:</strong> {{ job.get_job_type_display }}</p>
+                    <p><strong>Salary:</strong> ${{ job.salary }}</p>
+                    <p><strong>Deadline:</strong> {{ job.deadline|date:"F j, Y" }}</p>
+                </li>
+            {% empty %}
+                <li>No job postings available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if user.is_candidate %}
+        <h2>Submit Your CV</h2>
+        <form class="submit-cv" id="cvForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="job-select">Select Job:</label><br>
+            <select id="job-select" name="job" required>
+                <option value="" disabled selected>Select a job</option>
+                {% for job in jobs %}
+                    <option value="{{ job.id }}">{{ job.title }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="candidate-name">Your Name:</label><br>
+            <input type="text" id="candidate-name" name="name" required><br><br>
+
+            <label for="candidate-email">Your Email:</label><br>
+            <input type="email" id="candidate-email" name="email" required><br><br>
+            
+            <label for="cv-upload">Upload CV:</label><br>
+            <input type="file" id="cv-upload" name="resume" accept=".pdf,.doc,.docx" required><br><br>
+            
+            <button type="submit">Submit CV</button>
+        </form>
+    {% endif %}
+    </div>
+
+<script>
+
+    document.getElementById('jobForm')?.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const title = document.getElementById('job-title').value;
+        const companyName = document.getElementById('company-name').value;
+        const description = document.getElementById('job-description').value;
+        const experience = document.getElementById('experience').value;
+        const jobType = document.getElementById('job-type').value;
+        const salary = document.getElementById('salary').value;
+        const deadline = document.getElementById('deadline').value;
+
+        const li = document.createElement('li');
+        li.innerHTML = `<h3>${title}</h3>
+                        <p><strong>Company:</strong> ${companyName}</p>
+                        <p><strong>Job Description:</strong> ${description}</p>
+                        <p><strong>Experience Needed:</strong> ${experience} years</p>
+                        <p><strong>Job Type:</strong> ${jobType}</p>
+                        <p><strong>Salary:</strong> $${salary}</p>
+                        <p><strong>Deadline:</strong> ${new Date(deadline).toLocaleDateString()}</p>`;
+        document.getElementById('jobListUl').appendChild(li);
+
+        document.getElementById('job-title').value = '';
+        document.getElementById('company-name').value = '';
+        document.getElementById('job-description').value = '';
+        document.getElementById('experience').value = '';
+        document.getElementById('job-type').value = '';
+        document.getElementById('salary').value = '';
+        document.getElementById('deadline').value = '';
+    });
+
+    document.getElementById('cvForm')?.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const name = document.getElementById('candidate-name').value;
+        const email = document.getElementById('candidate-email').value;
+        const jobId = document.getElementById('job-select').value;
+        const cvFile = document.getElementById('cv-upload').files[0];
+
+        if (cvFile && jobId && name && email) {
+            alert(`CV submitted successfully by ${name} (${email}) for job ID ${jobId}: ${cvFile.name}`);
+        }
+
+        document.getElementById('candidate-name').value = '';
+        document.getElementById('candidate-email').value = '';
+        document.getElementById('cv-upload').value = '';
+        document.getElementById('job-select').value = '';
+    });
+</script>
+
+</body>
+</html>
+{% endblock %}

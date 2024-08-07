@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<main>
+    <h1>Your Profile</h1>
+    <p>Welcome, {{ user.username }}</p>
+
+    <!-- Display Profile Picture -->
+    <div>
+        {% if user.profile.profile_picture %}
+            <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+        {% else %}
+            <p>No profile picture uploaded.</p>
+        {% endif %}
+    </div>
+
+    <!-- Profile Picture Upload Form -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <a href="{% url 'edit_profile' %}" class="button">Edit Profile</a>
+    <a href="{% url 'settings' %}" class="button">Settings</a>
+</main>
+{% endblock %}

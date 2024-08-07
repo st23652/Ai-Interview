@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Interview Detail</title>
-</head>
-<body>
-    <h1>Interview Detail</h1>
-    <p>Transcript: {{ interview.transcript }}</p>
-    <p>Emotional State: {{ interview.emotional_state }}</p>
-    <p>Cheating Detected: {{ interview.cheating_detected }}</p>
-    <p>Noise Reduction Applied: {{ interview.noise_reduction_applied }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Interview Details</h2>
+<div>
+    <p><strong>Candidate:</strong> {{ interview.candidate.username }}</p>
+    <p><strong>Interviewer:</strong> {{ interview.interviewer.username }}</p>
+    <p><strong>Scheduled Date:</strong> {{ interview.scheduled_date }}</p>
+    <p><strong>Status:</strong> {{ interview.status }}</p>
+    <p><strong>Question Set:</strong> {{ interview.get_question_set_display }}</p>
+    <p><strong>Feedback:</strong> {{ interview.feedback }}</p>
+</div>
+<a href="{% url 'interview_list' %}">Back to Interview List</a>
+{% endblock %}

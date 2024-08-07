@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Skill Assessments{% endblock %}
+
+{% block content %}
+<h2>Skill Assessments</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    {% for assessment in assessments %}
+    <tr>
+        <td>{{ assessment.title }}</td>
+        <td>{{ assessment.description }}</td>
+        <td>
+            <a href="{% url 'skill_assessment_detail' assessment.pk %}" class="button">View</a>
+            <a href="{% url 'skill_assessment_take' assessment.pk %}" class="button">Take</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

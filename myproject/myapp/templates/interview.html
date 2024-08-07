@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Conduct Interview</h2>
+<div id="interview-container">
+    <!-- Introduction and Instructions -->
+    <div id="interview-intro">
+        <p>Welcome to your interview portal where you can practice common job interview questions.</p>
+        <p>Please follow the instructions and respond to the questions as clearly as possible.</p>
+        <p>You can practice them as many times as you want.</p>
+        <label for="question-set">Select Question Set:</label>
+        <select id="question-set" onchange="loadQuestions()">
+            <option value="problem_solving">Problem Solving</option>
+            <option value="decision_making">Decision Making</option>
+            <option value="about_you">About You</option>
+            <option value="business">Business</option>
+            <option value="tech">Technology</option>
+            <option value="leadership">Leadership</option>
+            <option value="team">Teamwork</option>
+            <option value="communication">Communication</option>
+            <option value="motivation">Motivation</option>
+            <option value="finance">Finance</option>
+        </select>
+        <button id="start-interview" onclick="startInterview()">Start Interview</button>
+    </div>
+
+    <!-- Interview Questions and Responses -->
+    <div id="interview-session" style="display: none;">
+        <div id="question-container">
+            <p id="question-text"></p>
+        </div>
+        <div id="response-container">
+            <label for="response">Your Response:</label>
+            <textarea id="response" rows="4" cols="50"></textarea>
+        </div>
+        <div id="control-buttons">
+            <button id="submit-response" onclick="submitResponse()">Submit Response</button>
+            <button id="next-question" style="display: none;" onclick="nextQuestion()">Next Question</button>
+        </div>
+    </div>
+
+    <!-- Interview Completion Message -->
+    <div id="interview-completion" style="display: none;">
+        <p>Thank you for completing the interview. Your responses have been recorded.</p>
+    </div>
+</div>
+
+<script>
+    let currentQuestionIndex = 0;
+    let answers = {};
+    const questions = {
+        problem_solving: [
+            "Describe a challenging problem you faced and how you solved it.",
+            "Give an example of a situation where you had to solve a difficult problem.",
+            "How do you approach complex problem-solving?"
+        ],
+        decision_making: [
+            "Describe a time you had to make a difficult decision.",
+            "How do you prioritize tasks when making decisions?",
+            "Give an example of a decision you made that impacted a project."
+        ],
+        about_you: [
+            "Tell me about a time when you had to work with a difficult team member.",
+            "Describe a situation where you had to adapt to a new process or system.",
+            "Give an example of a goal you set and how you achieved it."
+        ],
+        business: [
+            "Describe a time when you had to make a difficult decision in a business setting.",
+            "How do you prioritize tasks when working on a project?",
+            "Give an example of a successful project you managed."
+        ],
+        tech: [
+            "Describe a time when you had to troubleshoot a technical issue.",
+            "How do you approach learning new technologies?",
+            "Give an example of a technical project you worked on."
+        ],
+        leadership: [
+            "Describe a time when you had to motivate a team to achieve a goal.",
+            "How do you prioritize tasks when leading a team?",
+            "Give an example of a successful team project you managed."
+        ],
+        communication: [
+            "Describe a time when you had to communicate complex information to a team.",
+            "How do you approach conflict resolution in a team setting?",
+            "Give an example of a successful project you managed through effective communication."
+        ],
+        motivation: [
+            "Describe a time when you had to motivate yourself to achieve a goal.",
+            "How do you prioritize tasks when working on a project?",
+            "Give an example of a goal you set and how you achieved it."
+        ],
+        finance: [
+            "Describe a time when you had to manage a budget.",
+            "What do you prioritize when you have a tight budget for a month?",
+            "Give an example of a successful financial project you managed."
+        ]
+    };
+    let selectedQuestions = [];
+
+    function loadQuestions() {
+        const selectedSet = document.getElementById("question-set").value;
+        selectedQuestions = questions[selectedSet];
+    }
+
+    function startInterview() {
+        document.getElementById("interview-intro").style.display = "none";
+        document.getElementById("interview-session").style.display = "block";
+        loadQuestions();
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        if (currentQuestionIndex < selectedQuestions.length) {
+            document.getElementById("question-text").innerText = selectedQuestions[currentQuestionIndex];
+        } else {
+            completeInterview();
+        }
+    }
+
+    function submitResponse() {
+        const response = document.getElementById("response").value.trim();
+        if (response === "") {
+            alert("Please provide a response.");
+        } else {
+            // Save response
+            answers[selectedQuestions[currentQuestionIndex]] = response;
+
+            // Prepare for next question
+            document.getElementById("response").value = "";
+            document.getElementById("submit-response").style.display = "none";
+            document.getElementById("next-question").style.display = "inline";
+        }
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        displayQuestion();
+        document.getElementById("submit-response").style.display = "inline";
+        document.getElementById("next-question").style.display = "none";
+    }
+
+    function completeInterview() {
+        document.getElementById("interview-session").style.display = "none";
+        document.getElementById("interview-completion").style.display = "block";
+        // Save responses to the server
+        saveResponses();
+    }
+
+    function saveResponses() {
+        const interviewId = "{{ interview.id }}"; // Make sure this is set correctly from the Django context
+        fetch(`/interviews/${interviewId}/save_answers/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify(answers)
+        }).then(response => {
+            if (response.ok) {
+                console.log("Responses saved successfully.");
+            } else {
+                console.error("Error saving responses.");
+            }
+        }).catch(error => {
+            console.error("Error:", error);
+        });
+    }
+</script>
+{% endblock %}

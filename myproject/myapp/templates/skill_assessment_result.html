@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Skill Assessment Result{% endblock %}
+
+{% block content %}
+<h2>Assessment Results</h2>
+<p>Your score: {{ result.score }}</p>
+<p>Feedback: {{ result.feedback }}</p>
+{% endblock %}

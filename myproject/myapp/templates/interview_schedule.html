@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Schedule Your Interview</h2>
+<form method="post" action="{% url 'interview_schedule' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="interview_time">Choose a Date and Time:</label>
+        <input type="datetime-local" id="interview_time" name="interview_time" required>
+    </div>
+    <button type="submit">Schedule Interview</button>
+</form>
+{% endblock %}

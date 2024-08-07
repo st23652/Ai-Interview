@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Candidate</title>
-</head>
-<body>
-    <h1>Create Candidate</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Create Candidate</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Create Candidate{% endblock %}
+
+{% block content %}
+<h2>Create Candidate</h2>
+<form method="POST" action="{% url 'candidate_create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create Candidate">
+</form>
+{% endblock %}

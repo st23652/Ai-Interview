@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidate List{% endblock %}
+
+{% block content %}
+<h2>Candidate List</h2>
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    {% for candidate in candidates %}
+    <tr>
+        <td>{{ candidate.user.username }}</td>
+        <td>{{ candidate.user.email }}</td>
+        <td>
+            <a href="{% url 'candidate_detail' candidate.pk %}" class="button">View</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

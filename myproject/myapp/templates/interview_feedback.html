@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Provide Feedback</h2>
+<form method="post" action="{% url 'interview_feedback' interview.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required>{{ interview.feedback }}</textarea>
+    </div>
+    <button type="submit">Submit Feedback</button>
+</form>
+<a href="{% url 'interview_detail' interview.id %}">Back to Interview Details</a>
+{% endblock %}

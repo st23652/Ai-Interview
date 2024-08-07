@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Interview List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Candidate</th>
+            <th>Interviewer</th>
+            <th>Scheduled Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for interview in interviews %}
+        <tr>
+            <td>{{ interview.candidate.username }}</td>
+            <td>{{ interview.interviewer.username }}</td>
+            <td>{{ interview.scheduled_date }}</td>
+            <td>{{ interview.get_status_display }}</td>
+            <td>
+                <a href="{% url 'interview_detail' interview.id %}">View</a>
+                {% if interview.status != 'completed' %}
+                | <a href="{% url 'interview_feedback' interview.id %}">Provide Feedback</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'interview_create' %}">Schedule New Interview</a>
+{% endblock %}

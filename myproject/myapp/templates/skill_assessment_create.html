@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Skill Assessment{% endblock %}
+
+{% block content %}
+    <title>Create Skill Assessment</title>
+</head>
+<body>
+    <h1>Create Skill Assessment</h1>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Add form fields as needed, for example: -->
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <input type="submit" value="Create Assessment">
+    </form>
+</body>
+</html>
+{% endblock %}

@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    <h1>Welcome to the Job Portal</h1>
-    <p><a href="{% url 'job_list' %}">View Jobs</a></p>
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<title>AI Interviewer</title>
+    <main>
+        <h1>Welcome to AI Interviewer</h1>
+        <p>Your smart assistant for automated interviews.</p>
+    </main>
 </body>
 </html>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Take Skill Assessment{% endblock %}
+
+{% block content %}
+<h2>Take Skill Assessment</h2>
+<form method="POST" action="{% url 'skill_assessment_take' assessment.pk %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit Assessment">
+</form>
+{% endblock %}

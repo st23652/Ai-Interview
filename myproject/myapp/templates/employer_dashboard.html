@@ -1,0 +1,26 @@
+<!-- employer_dashboard.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <ul>
+    {% for job in jobs %}
+      <li>
+        <h3>{{ job.title }}</h3>
+        <p>{{ job.description }}</p>
+        <a href="{% url 'edit_job' job.id %}">Edit</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Uploaded CVs</h2>
+  <ul>
+    {% for cv in cv_uploads %}
+      <li>
+        <p><strong>Job:</strong> {{ cv.job.title }}</p>
+        <p><strong>Candidate:</strong> {{ cv.user.username }}</p>
+        <p><strong>Uploaded at:</strong> {{ cv.uploaded_at }}</p>
+        <p><a href="{{ cv.cv.url }}">Download CV</a></p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

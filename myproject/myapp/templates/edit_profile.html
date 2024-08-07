@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+
+<form action="{% url 'edit_profile' %}" method="post">
+    {% csrf_token %}
+
+    <div>
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" value="{{ profile.occupation }}">
+    </div>
+
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" value="{{ profile.dob }}">
+    </div>
+
+    <div>
+        <label for="industry">Industry:</label>
+        <select id="industry" name="industry">
+            {% for industry in industry_choices %}
+            <option value="{{ industry }}" {% if profile.industry == industry %}selected{% endif %}>{{ industry }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="currently_employed">Currently Employed:</label>
+        <input type="checkbox" id="currently_employed" name="currently_employed" {% if profile.currently_employed %}checked{% endif %}>
+    </div>
+
+    <div id="current_company_section" {% if not profile.currently_employed %}style="display:none"{% endif %}>
+        <label for="current_company">Current Company:</label>
+        <input type="text" id="current_company" name="current_company" value="{{ profile.current_company }}">
+    </div>
+
+    {% if user.is_employer %}
+    <div>
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" value="{{ profile.company_name }}">
+    </div>
+
+    <div>
+        <label for="company_start_date">Company Start Date:</label>
+        <input type="date" id="company_start_date" name="company_start_date" value="{{ profile.company_start_date }}">
+    </div>
+
+    <div>
+        <label for="company_size">Company Size:</label>
+        <select id="company_size" name="company_size">
+            <option value="1-10" {% if profile.company_size == "1-10" %}selected{% endif %}>1-10</option>
+            <option value="11-50" {% if profile.company_size == "11-50" %}selected{% endif %}>11-50</option>
+            <option value="51-100" {% if profile.company_size == "51-100" %}selected{% endif %}>51-100</option>
+            <option value="101-500" {% if profile.company_size == "101-500" %}selected{% endif %}>101-500</option>
+            <option value="501-1000" {% if profile.company_size == "501-1000" %}selected{% endif %}>501-1000</option>
+            <option value="1001-5000" {% if profile.company_size == "1001-5000" %}selected{% endif %}>1001-5000</option>
+            <option value="5001-10000" {% if profile.company_size == "5001-10000" %}selected{% endif %}>5001-10000</option>
+            <option value="10001+" {% if profile.company_size == "10001+" %}selected{% endif %}>10001+</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="company_industry">Company Industry:</label>
+        <select id="company_industry" name="company_industry">
+            {% for industry in industry_choices %}
+            <option value="{{ industry }}" {% if profile.company_industry == industry %}selected{% endif %}>{{ industry }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    {% endif %}
+
+    <button type="submit">Save Changes</button>
+</form>
+
+<script>
+    document.getElementById('currently_employed').addEventListener('change', function() {
+        document.getElementById('current_company_section').style.display = this.checked ? 'block' : 'none';
+    });
+</script>
+{% endblock %}

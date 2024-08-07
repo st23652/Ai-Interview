@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Job Listings</title>
-</head>
-<body>
-    <h1>Job Listings</h1>
-    <ul>
-        {% for job in jobs %}
-            <li>{{ job.title }} - <a href="{% url 'apply_job' job.id %}">Apply</a></li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'job_create' %}">Create a Job</a>
-</body>
-</html>
+<!-- job_list.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Job Listings</h1>
+  <ul>
+    {% for job in jobs %}
+      <li>
+        <strong>Job Title:</strong> {{ job.title }}<br>
+        <strong>Job Description:</strong> {{ job.description }}<br>
+        <strong>Posted by:</strong> {{ job.employer.username }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
