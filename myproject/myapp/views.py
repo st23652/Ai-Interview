@@ -8,7 +8,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.decorators.csrf import csrf_protect
 from .models import InterviewAnswer, Interview, InterviewAnswer, Job, CVUpload, Profile, Sector, Question, CandidateResponse, SkillAssessment
-from .forms import CVForm, CandidateProfileForm, JobApplicationForm, JobForm, ProfileForm, SettingsForm, InterviewScheduleForm, CustomUserCreationForm, InterviewForm, SkillAssessmentForm, YourForm
+from .forms import CVForm, CandidateProfileForm, JobApplicationForm, JobForm, ProfileForm, SettingsForm, InterviewScheduleForm, CustomUserCreationForm, InterviewForm, SkillAssessmentForm, UserRegistrationForm, YourForm
 from .models import Question
 from .forms import AnswerForm
 from django.core.serializers.json import DjangoJSONEncoder
@@ -24,6 +24,8 @@ def add_job(request):
         if form.is_valid():
             form.save()
             return redirect('job_list')  # Redirect to a page where you list jobs
+        else:
+            print(form.error)
     else:
         form = JobForm()
     return render(request, 'add_job.html', {'form': form})
@@ -56,6 +58,8 @@ def profile_view(request):
         if form.is_valid():
             form.save()
             return redirect('profile')
+        else:
+            print(form.error)
     else:
         form = ProfilePictureForm(instance=profile)
 
@@ -81,6 +85,8 @@ def question_set(request, set_name):
             answer.user = request.user
             answer.save()
             return redirect('interview_questions')
+        else:
+            print(form.error)
     else:
         form = AnswerForm()
     return render(request, 'question_set.html', {'questions': questions, 'form': form})
@@ -102,7 +108,9 @@ def edit_profile(request):
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            return redirect('profile')  
+            return redirect('profile') 
+        else:
+            print(form.error)
     else:
         form = ProfileForm(instance=profile)
 
@@ -127,6 +135,8 @@ def skill_assessment_create(request):
         if form.is_valid():
             form.save()
             return HttpResponse("Skill assessment created successfully!")
+        else:
+            print(form.error)
     else:
         form = SkillAssessmentForm()
     return render(request, 'skill_assessment_create.html', {'form': form})
@@ -143,7 +153,7 @@ def profile_update(request):
             form.save()
             return redirect('profile')  # Redirect to the profile page after successful upload
         else:
-            print(form.errors)  # Print form errors for debugging
+            print(form.error)
     else:
         form = ProfileForm(instance=request.user.profile)
     
@@ -159,6 +169,8 @@ def add_interview(request):
         if form.is_valid():
             form.save()
             return redirect('interview_list')
+        else:
+            print(form.error)
     else:
         form = InterviewForm()
     return render(request, 'add_interview.html', {'form': form})
@@ -169,6 +181,8 @@ def add_candidate(request):
         if form.is_valid():
             form.save()
             return redirect('candidate_list')
+        else:
+            print(form.error)
     else:
         form = CandidateProfileForm()
     return render(request, 'add_candidate.html', {'form': form})
@@ -207,6 +221,8 @@ def interview_schedule(request):
         if form.is_valid():
             form.save()
             return redirect('interview_list')
+        else:
+            print(form.error)
     else:
         form = InterviewScheduleForm()
     return render(request, 'interview_schedule.html', {'form': form})
@@ -221,28 +237,23 @@ def my_protected_view(request):
         form = YourForm(request.POST)
         if form.is_valid():
             return redirect('success_url')
+        else:
+            print(form.error)
     else:
         form = YourForm()
     return render(request, 'your_template.html', {'form': form})
 
-@csrf_exempt
 def register_view(request):
     if request.method == 'POST':
-        user_form = CustomUserCreationForm(request.POST)
-        profile_form = ProfileForm(request.POST)
-
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            profile = profile_form.save(commit=False)
-            profile.user = user
-            profile.save()
-            messages.success(request, 'Registration successful. You can now log in.')
-            return redirect('login')
+        form = UserRegistrationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({'message': 'Registration successful.'}, status=200)
+        else:
+            return JsonResponse({'errors': form.errors}, status=400)
     else:
-        user_form = CustomUserCreationForm()
-        profile_form = ProfileForm()
-
-    return render(request, 'register.html', {'user_form': user_form, 'profile_form': profile_form})
+        form = UserRegistrationForm()
+    return render(request, 'register.html', {'form': form})
 
 def csrf_failure(request, reason=""):
     return render(request, '403_csrf.html', status=403)
@@ -261,6 +272,7 @@ def update_settings(request):
             return redirect('settings')
         else:
             messages.error(request, 'Please correct the error(s) below.')
+            print(form.error)
     else:
         form = SettingsForm(instance=request.user)
     return render(request, 'settings.html', {'form': form})
@@ -281,6 +293,8 @@ def login_view(request):
                 return redirect('home')
             else:
                 form.add_error(None, 'Invalid username or password')
+        else:
+            print(form.error)
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
@@ -318,6 +332,8 @@ def job_edit(request, pk):
         if form.is_valid():
             form.save()
             return redirect('job_details', pk=pk)
+        else:
+            print(form.error)
     else:
         form = JobForm(instance=job)
     return render(request, 'job_edit.html', {'form': form})
@@ -334,6 +350,8 @@ def apply_job(request, pk):
             application.candidate = request.user.profile  
             application.save()
             return redirect('application_success')  
+        else:
+            print(form.error)
     else:
         form = JobApplicationForm()
 
@@ -354,6 +372,8 @@ def candidate_create(request):
         if form.is_valid():
             form.save()
             return redirect('candidate_list')
+        else:
+            print(form.error)
     else:
         form = CandidateProfileForm()
     return render(request, 'add_candidate.html', {'form': form})
@@ -374,11 +394,15 @@ def job_postings_view(request):
             if form.is_valid():
                 form.save()
                 return redirect('job_postings')
+            else:
+                print(form.error)
         elif user_profile.is_candidate:
             form = CVForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
                 return redirect('job_postings')
+            else:
+                print(form.error)
     else:
         job_form = JobForm() if user_profile.is_employer else None
         cv_form = CVForm() if user_profile.is_candidate else None
@@ -394,6 +418,8 @@ def job_create(request):
         if form.is_valid():
             form.save()
             return redirect('job_list')
+        else:
+            print(form.error)
     else:
         form = JobForm()
     return render(request, 'job_create.html', {'form': form})
